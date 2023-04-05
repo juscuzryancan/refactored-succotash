@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class HelloMessage {
-    private String name;
+public class Message {
+    private String username;
+    private String content;
+
+    public Message(String content) {
+        this.content = content;
+    }
 }

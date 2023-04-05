@@ -22,7 +22,6 @@ public class SocketHandler extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         for (WebSocketSession webSocketSession : sessions) {
             Map value = new Gson().fromJson(message.getPayload(), Map.class);
-            log.info("hello " + message);
             webSocketSession.sendMessage(new TextMessage("Hello " + value.get("name") + " !"));
         }
     }
